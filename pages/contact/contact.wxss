@@ -1,0 +1,226 @@
+.container {
+  min-height: 100vh;
+  background: #f6f7f9;
+  padding: 32rpx 24rpx 60rpx;
+  box-sizing: border-box;
+}
+
+.page-title {
+  font-size: 24rpx;
+  color: #8a8f99;
+  text-align: center;
+  margin-bottom: 20rpx;
+  letter-spacing: 2rpx;
+}
+
+.card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 28rpx;
+  box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+.profile-card {
+  padding: 32rpx 28rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 22rpx;
+  background: #ececec;
+}
+
+.profile-main {
+  text-align: center;
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18rpx;
+  flex-wrap: wrap;
+}
+
+.nickname {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.score {
+  font-size: 30rpx;
+  color: #6c5ce7;
+  font-weight: 700;
+}
+
+.meta-row {
+  margin-top: 14rpx;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+
+.meta {
+  font-size: 24rpx;
+  color: #8a8f99;
+}
+
+.tag-row {
+  margin-top: 18rpx;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.type-tag {
+  font-size: 22rpx;
+  color: #ffffff;
+  background: #111111;
+  border-radius: 999rpx;
+  padding: 8rpx 18rpx;
+}
+
+.type-tag.light {
+  color: #6c5ce7;
+  background: #f0efff;
+}
+
+.bio {
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #444444;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.card + .card {
+  margin-top: 20rpx;
+}
+
+.card:not(.profile-card) {
+  padding: 28rpx 24rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 18rpx;
+}
+
+.reason-item {
+  font-size: 26rpx;
+  color: #4a4a4a;
+  line-height: 1.8;
+  margin-bottom: 12rpx;
+  background: #f8f8f8;
+  border-radius: 18rpx;
+  padding: 14rpx 18rpx;
+}
+
+.reason-item:last-child {
+  margin-bottom: 0;
+}
+
+.metric-item {
+  margin-bottom: 24rpx;
+}
+
+.metric-item:last-child {
+  margin-bottom: 0;
+}
+
+.metric-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.metric-name {
+  font-size: 26rpx;
+  color: #4a4a4a;
+}
+
+.metric-score {
+  font-size: 24rpx;
+  color: #6c5ce7;
+  font-weight: 600;
+}
+
+.metric-bar {
+  width: 100%;
+  height: 16rpx;
+  border-radius: 999rpx;
+  background: #ececf3;
+  overflow: hidden;
+}
+
+.metric-fill {
+  height: 100%;
+  border-radius: 999rpx;
+  background: linear-gradient(90deg, #111111 0%, #6c5ce7 100%);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.tag {
+  font-size: 22rpx;
+  color: #6c5ce7;
+  background: #f0efff;
+  border-radius: 999rpx;
+  padding: 8rpx 16rpx;
+}
+
+.action-bar {
+  margin-top: 28rpx;
+}
+
+.wechat-btn {
+  width: 100% !important;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 999rpx;
+  background: #111111;
+  color: #ffffff;
+  font-size: 30rpx;
+  border: none;
+}
+.opener-card {
+  background: #f8f8f8;
+  border-radius: 22rpx;
+  padding: 22rpx 20rpx 20rpx;
+}
+
+.opener-text {
+  font-size: 28rpx;
+  color: #4a4a4a;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.opener-btn {
+  margin-top: 20rpx;
+}
+.opener-btn{
+  width: 100% !important;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 999rpx;
+  background: #111111;
+  color: #ffffff;
+  font-size: 30rpx;
+  border: none;
+}

@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="header fade-down delay-1">
+    <text class="title">契合度测试</text>
+    <text class="subtitle">众里寻他千百度，蓦然回首，那人却在，灯火阑珊处</text>
+  </view>
+
+  <view class="hero-image-card float-gentle fade-up delay-2">
+    <image class="hero-image" src="/images/illustration.jpg" mode="aspectFill"></image>
+    <view class="image-mask"></view>
+  </view>
+
+  <view class="message-section">
+    <view class="message-line fade-up delay-3">喂 </view>
+    <view class="message-line fade-up delay-3">你的世界到底需不需要 </view>
+    <view class="message-line fade-up delay-3">我这份吵闹 </view>
+
+
+    
+  </view>
+
+  <view class="action-section fade-up delay-10">
+    <button class="primary-btn {{isAgreed ? '' : 'disabled'}}" bindtap="handleStart">
+      开始旅途
+    </button>
+
+    <view class="agreement">
+      <view class="checkbox {{isAgreed ? 'checked' : ''}}" bindtap="toggleAgreement">
+        <text wx:if="{{isAgreed}}" class="tick">✓</text>
+      </view>
+      <text class="agreement-text" bindtap="toggleAgreement">我已阅读并同意</text>
+      <text class="link">《用户协议》</text>
+    </view>
+  </view>
+</view>

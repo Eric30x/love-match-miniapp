@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="progress-container">
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{(current + 1) / total * 100 + '%'}}"></view>
+    </view>
+    <view class="progress-info">
+      <text class="section-tag">{{questions[current].section}}</text>
+      <text class="current-num">{{current + 1}}</text>
+      <text class="total-num"> / {{total}}</text>
+    </view>
+  </view>
+
+  <view class="main-content fade-in" key="{{current}}">
+    <view class="question-wrapper">
+      <text class="question-label">Q{{current + 1}}</text>
+      <text class="question-text">{{questions[current].question}}</text>
+      <text wx:if="{{questions[current].multi}}" class="question-tip">
+        最多可选 {{questions[current].maxSelect}} 项
+      </text>
+    </view>
+
+    <view class="options-group">
+      <view
+        wx:for="{{currentOptions}}"
+        wx:key="index"
+        bindtap="selectOption"
+        data-index="{{item.index}}"
+        class="option-card {{item.active ? 'is-active' : ''}}"
+      >
+        <view class="option-index">{{item.letter}}</view>
+        <text class="option-content">{{item.text}}</text>
+        <view class="check-icon" wx:if="{{item.active}}">✓</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer-action">
+    <view class="nav-btns">
+      <view class="back-btn" bindtap="prevQuestion" wx:if="{{current > 0}}">
+        返回
+      </view>
+      <button
+        class="next-btn {{selectedIndexes.length === 0 ? 'is-disabled' : ''}}"
+        bindtap="nextQuestion"
+      >
+        {{current === total - 1 ? '揭晓结果' : '下一题'}}
+      </button>
+    </view>
+  </view>
+</view>
+

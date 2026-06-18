@@ -1,0 +1,196 @@
+.container {
+  min-height: 100vh;
+  background-color: #F6F7F9;
+  padding: 60rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 60rpx;
+  padding-left: 10rpx;
+}
+
+.title {
+  display: block;
+  font-size: 52rpx;
+  font-weight: 600;
+  color: #1A1A1A;
+  letter-spacing: 2rpx;
+}
+
+.subtitle {
+  display: block;
+  font-size: 26rpx;
+  color: #909399;
+  margin-top: 16rpx;
+  letter-spacing: 1rpx;
+  line-height: 1.6;
+}
+
+.form-card {
+  background: #FFFFFF;
+  border-radius: 40rpx;
+  padding: 40rpx 30rpx;
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin-bottom: 28rpx;
+}
+
+.section-gap {
+  margin-top: 20rpx;
+}
+
+.form-item {
+  width: 100%;
+  margin-bottom: 40rpx;
+  box-sizing: border-box;
+}
+
+.form-row {
+  display: flex;
+  gap: 20rpx;
+  width: 100%;
+}
+
+.half {
+  flex: 1;
+  min-width: 0;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.label {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #303133;
+  line-height: 1.4;
+}
+
+.required-dot {
+  color: #6C5CE7;
+  font-size: 16rpx;
+  margin-left: 8rpx;
+}
+
+.input,
+.picker,
+.textarea {
+  width: 100%;
+  background: #F8F9FA;
+  border-radius: 24rpx;
+  padding: 24rpx 32rpx;
+  font-size: 28rpx;
+  color: #1A1A1A;
+  border: 1rpx solid transparent;
+  box-sizing: border-box;
+}
+
+.input {
+  height: 96rpx;
+  min-height: 96rpx;
+  line-height: 48rpx;
+}
+
+.picker {
+  min-height: 96rpx;
+  display: flex;
+  align-items: center;
+  color: #C0C4CC;
+}
+
+.selected {
+  color: #1A1A1A;
+}
+
+.placeholder-style {
+  color: #C0C4CC;
+}
+
+.textarea {
+  min-height: 180rpx;
+  line-height: 1.6;
+}
+
+.text-count {
+  text-align: right;
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  color: #B0B0B0;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20rpx;
+}
+
+.radio-cell {
+  flex: 1;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F8F9FA;
+  border-radius: 20rpx;
+  font-size: 26rpx;
+  color: #606266;
+  box-sizing: border-box;
+}
+
+.radio-cell.active {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.tip-inline {
+  font-size: 22rpx;
+  color: #C0C4CC;
+  font-weight: normal;
+}
+
+.submit-btn {
+  margin-top: 60rpx;
+  width: 100% !important;
+  height: 100rpx;
+  background: #E0E0E0;
+  color: #FFFFFF;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.submit-btn.can-submit {
+  background: #1A1A1A;
+  box-shadow: 0 20rpx 40rpx rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn[disabled] {
+  opacity: 1;
+}
+
+.privacy {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  margin: 40rpx 0;
+}
+
+.link {
+  color: #1A1A1A;
+  text-decoration: underline;
+  margin-left: 8rpx;
+}

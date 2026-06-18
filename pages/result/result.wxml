@@ -1,0 +1,105 @@
+<view class="container">
+  <view class="premium-card">
+    <view class="deco-line" style="background: {{resultColor}}"></view>
+
+    <view class="header-section">
+      <text class="user-label">匹配结果</text>
+      <view class="type-title" style="color: {{resultColor}}">{{type}}</view>
+      <view class="result-subtype">
+        <text class="subtype-label">恋爱偏好</text>
+        <text class="subtype-badge">{{subType}}</text>
+      </view>
+
+      <view class="tag-group">
+        <text class="tag" wx:for="{{tags}}" wx:key="index" style="color: {{resultColor}}; background: {{resultColor}}15">
+          # {{item}}
+        </text>
+      </view>
+    </view>
+
+    <view class="analysis-box">
+      <view class="quote-mark">“</view>
+      <text class="description">{{description}}</text>
+      <view class="quote-mark rotate">”</view>
+    </view>
+
+    <view class="score-section">
+      <view class="score-circle">
+        <text class="score-num">{{matchPercent}}</text>
+        <text class="score-unit">%</text>
+      </view>
+      <text class="score-label">模型贴合指数</text>
+    </view>
+
+    <view class="detail-card" wx:for="{{reportSections}}" wx:key="title">
+      <view class="detail-title">{{item.title}}</view>
+      <text class="detail-text">{{item.content}}</text>
+    </view>
+
+    <view class="detail-card">
+      <view class="detail-title">适合你的对象</view>
+      <view class="bullet-item" wx:for="{{suitableFor}}" wx:key="index">• {{item}}</view>
+    </view>
+
+    <view class="detail-card">
+      <view class="detail-title">不太适合你的对象</view>
+      <view class="bullet-item" wx:for="{{unsuitableFor}}" wx:key="index">• {{item}}</view>
+    </view>
+
+    <view class="detail-card">
+      <view class="detail-title">相处建议</view>
+      <view class="bullet-item" wx:for="{{adviceList}}" wx:key="index">• {{item}}</view>
+    </view>
+
+    <view class="detail-card">
+      <view class="detail-title">你的关系侧重点</view>
+
+      <view class="metric-row">
+        <text>情绪回应需求</text>
+        <text>{{radarSummary.emotionalNeed}} / 10</text>
+      </view>
+      <view class="metric-bar">
+        <view class="metric-fill" style="width: {{emotionalNeedWidth}}; background: {{resultColor}}"></view>
+      </view>
+
+      <view class="metric-row">
+        <text>理性沟通倾向</text>
+        <text>{{radarSummary.rationality}} / 10</text>
+      </view>
+      <view class="metric-bar">
+        <view class="metric-fill" style="width: {{rationalityWidth}}; background: {{resultColor}}"></view>
+      </view>
+
+      <view class="metric-row">
+        <text>边界与独立性</text>
+        <text>{{radarSummary.independence}} / 10</text>
+      </view>
+      <view class="metric-bar">
+        <view class="metric-fill" style="width: {{independenceWidth}}; background: {{resultColor}}"></view>
+      </view>
+
+      <view class="metric-row">
+        <text>长期承诺意愿</text>
+        <text>{{radarSummary.commitment}} / 10</text>
+      </view>
+      <view class="metric-bar">
+        <view class="metric-fill" style="width: {{commitmentWidth}}; background: {{resultColor}}"></view>
+      </view>
+
+      <view class="metric-row">
+        <text>行动与修复倾向</text>
+        <text>{{radarSummary.action}} / 10</text>
+      </view>
+      <view class="metric-bar">
+        <view class="metric-fill" style="width: {{actionWidth}}; background: {{resultColor}}"></view>
+      </view>
+    </view>
+
+    <view class="footer-btns">
+      <button class="main-btn" bindtap="goToMatch" style="background: {{resultColor}}">
+        探索同频对象
+      </button>
+      <button class="sub-btn" open-type="share">分享结果</button>
+    </view>
+  </view>
+</view>

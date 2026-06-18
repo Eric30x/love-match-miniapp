@@ -1,0 +1,108 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">契合度测试</text>
+    <text class="page-desc">为你挑选更适合深入了解的人</text>
+  </view>
+
+  <!-- 顶部操作 -->
+  <view class="toolbar" wx:if="{{!loading && matches.length}}">
+    <view class="toolbar-btn" bindtap="refreshMatches">换一批</view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-box" wx:if="{{loading}}">
+    <text class="loading-text">正在为你匹配更合适的人...</text>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-box" wx:if="{{!loading && !matches.length}}">
+    <text class="empty-text">{{emptyText}}</text>
+    <view class="toolbar toolbar-center">
+      <view class="toolbar-btn" bindtap="refreshMatches">再试一次</view>
+    </view>
+  </view>
+
+  <!-- 匹配列表 -->
+  <view class="match-list" wx:if="{{!loading && matches.length}}">
+    <block wx:for="{{matches}}" wx:key="id" wx:for-item="match" wx:for-index="idx">
+      <view class="match-card">
+        <!-- 顶部 -->
+        <view class="card-top">
+          <image class="avatar" src="{{match.avatar}}" mode="aspectFill"></image>
+
+          <view class="user-info">
+            <view class="name-row">
+              <text class="nickname">{{match.nickname}}</text>
+              <text class="similarity">{{match.similarity}}%</text>
+            </view>
+
+            <view class="meta-row">
+              <text class="meta">{{match.age}}岁</text>
+              <text class="meta">·</text>
+              <text class="meta">{{match.gender}}</text>
+              <text class="meta">·</text>
+              <text class="meta">{{match.city}}</text>
+              <text class="meta" wx:if="{{match.relationshipGoal}}">·</text>
+              <text class="meta" wx:if="{{match.relationshipGoal}}">{{match.relationshipGoal}}</text>
+            </view>
+
+            <view class="tag-row">
+              <view class="type-tag">{{match.type}}</view>
+              <view class="type-tag light" wx:if="{{match.routine}}">{{match.routine}}</view>
+              <view class="type-tag light" wx:if="{{match.workStyle}}">{{match.workStyle}}</view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 自我介绍 -->
+        <view class="bio">
+          {{match.bio || '这个人还没有留下自我介绍'}}
+        </view>
+
+        <!-- 推荐理由 -->
+        <view class="section-box">
+          <view class="section-title">推荐理由</view>
+          <block wx:for="{{match.reasons}}" wx:key="index" wx:for-item="reason">
+            <view class="reason-item">{{reason}}</view>
+          </block>
+        </view>
+
+        <!-- 匹配分析 -->
+        <view class="section-box">
+          <view class="section-title">匹配分析</view>
+          <view class="metrics-row">
+            <view class="metric-card">
+              <text class="metric-label">人格</text>
+              <text class="metric-value">{{match.dimensions.personality || 0}}</text>
+            </view>
+            <view class="metric-card">
+              <text class="metric-label">兴趣</text>
+              <text class="metric-value">{{match.dimensions.interest || 0}}</text>
+            </view>
+            <view class="metric-card">
+              <text class="metric-label">未来</text>
+              <text class="metric-value">{{match.dimensions.future || 0}}</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 标签 -->
+        <view class="tag-list" wx:if="{{match.tags && match.tags.length}}">
+          <block wx:for="{{match.tags}}" wx:key="index" wx:for-item="tag">
+            <view class="small-tag"># {{tag}}</view>
+          </block>
+        </view>
+
+        <!-- 按钮 -->
+        <view class="card-footer">
+          <view class="detail-btn" data-index="{{idx}}" bindtap="viewContact">查看详情</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 底部换一批 -->
+  <view class="toolbar toolbar-bottom" wx:if="{{!loading && matches.length}}">
+    <view class="toolbar-btn" bindtap="refreshMatches">换一批</view>
+  </view>
+</view>

@@ -1,0 +1,263 @@
+.container {
+  min-height: 100vh;
+  background: #f6f7f9;
+  padding: 32rpx 24rpx 56rpx;
+  box-sizing: border-box;
+}
+
+.page-header {
+  margin-bottom: 28rpx;
+  text-align: center;
+}
+
+.page-tag {
+  display: block;
+  font-size: 22rpx;
+  color: #9aa0ac;
+  letter-spacing: 2rpx;
+  margin-bottom: 10rpx;
+}
+
+.page-title {
+  display: block;
+  font-size: 46rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.page-desc {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 26rpx;
+  color: #7f8694;
+  line-height: 1.7;
+}
+
+.loading-box,
+.empty-box {
+  padding: 120rpx 24rpx;
+  text-align: center;
+}
+
+.loading-text,
+.empty-text {
+  font-size: 28rpx;
+  color: #8a8f99;
+}
+
+.match-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.match-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 30rpx;
+  padding: 28rpx 24rpx;
+  box-sizing: border-box;
+  box-shadow: 0 12rpx 36rpx rgba(0, 0, 0, 0.05);
+  border: 1rpx solid #eef0f4;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  background: #ececec;
+  flex-shrink: 0;
+}
+
+.user-info {
+  flex: 1;
+  min-width: 0;
+  margin-left: 20rpx;
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.nickname {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+  max-width: 70%;
+}
+
+.similarity {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #6c5ce7;
+  flex-shrink: 0;
+}
+
+.meta-row {
+  margin-top: 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+
+.meta {
+  font-size: 24rpx;
+  color: #8a8f99;
+}
+
+.tag-row {
+  margin-top: 14rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.type-tag {
+  font-size: 22rpx;
+  color: #ffffff;
+  background: #111111;
+  border-radius: 999rpx;
+  padding: 8rpx 18rpx;
+  line-height: 1.2;
+}
+
+.type-tag.light {
+  color: #6c5ce7;
+  background: #f0efff;
+}
+
+.bio {
+  margin-top: 22rpx;
+  font-size: 27rpx;
+  color: #444444;
+  line-height: 1.75;
+  background: #fafafa;
+  border-radius: 20rpx;
+  padding: 18rpx 18rpx;
+}
+
+.section-box {
+  margin-top: 20rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 14rpx;
+}
+
+.reason-item {
+  font-size: 24rpx;
+  color: #545b66;
+  line-height: 1.7;
+  background: #f8f8f8;
+  border-radius: 18rpx;
+  padding: 14rpx 16rpx;
+  margin-bottom: 10rpx;
+}
+
+.metrics-row {
+  display: flex;
+  gap: 12rpx;
+}
+
+.metric-card {
+  flex: 1;
+  background: #f8f8f8;
+  border-radius: 18rpx;
+  padding: 16rpx 10rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.metric-label {
+  display: block;
+  font-size: 22rpx;
+  color: #8a8f99;
+}
+
+.metric-value {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.tag-list {
+  margin-top: 18rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.small-tag {
+  font-size: 22rpx;
+  color: #6c5ce7;
+  background: #f0efff;
+  border-radius: 999rpx;
+  padding: 8rpx 14rpx;
+}
+
+.card-footer {
+  margin-top: 22rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.detail-btn {
+  min-width: 180rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  border-radius: 999rpx;
+  background: #111111;
+  color: #ffffff;
+  font-size: 24rpx;
+  font-weight: 600;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20rpx;
+}
+
+.toolbar-center {
+  justify-content: center;
+  margin-top: 24rpx;
+}
+
+.toolbar-bottom {
+  margin-top: 24rpx;
+  justify-content: center;
+}
+
+.toolbar-btn {
+  min-width: 168rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  border-radius: 999rpx;
+  background: #111111;
+  color: #ffffff;
+  font-size: 24rpx;
+  font-weight: 600;
+  padding: 0 26rpx;
+  box-sizing: border-box;
+}
+
+.page-desc {
+  display: block;
+  margin-top: 12rpx;
+}

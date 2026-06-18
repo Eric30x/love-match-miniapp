@@ -1,0 +1,220 @@
+<view class="container">
+  <view class="header">
+    <text class="title">基本信息</text>
+    <text class="subtitle">补充一点现实信息，匹配会更靠谱</text>
+  </view>
+
+  <view class="form-card">
+    <view class="section-title">基础资料</view>
+
+    <view class="form-item">
+      <view class="label-row">
+        <text class="label">昵称</text>
+        <text class="required-dot">●</text>
+      </view>
+      <input
+        class="input"
+        type="text"
+        confirm-type="done"
+        cursor-spacing="20"
+        placeholder-class="placeholder-style"
+        placeholder="想被如何称呼？"
+        bindinput="onInput"
+        data-field="nickname"
+        value="{{nickname}}"
+        maxlength="20"
+      />
+    </view>
+
+    <view class="form-row">
+      <view class="form-item half">
+        <view class="label-row">
+          <text class="label">年龄</text>
+          <text class="required-dot">●</text>
+        </view>
+        <picker mode="selector" range="{{ageRange}}" bindchange="onAgeChange">
+          <view class="picker {{age ? 'selected' : ''}}">
+            {{age ? age + ' 岁' : '请选择'}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="form-item half">
+        <view class="label-row">
+          <text class="label">学历</text>
+        </view>
+        <picker mode="selector" range="{{educationRange}}" bindchange="onEducationChange">
+          <view class="picker {{education ? 'selected' : ''}}">
+            {{education || '请选择'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="label-row">
+        <text class="label">性别</text>
+        <text class="required-dot">●</text>
+      </view>
+      <radio-group class="radio-group" bindchange="onGenderChange">
+        <label
+          class="radio-cell {{gender === item ? 'active' : ''}}"
+          wx:for="{{genderRange}}"
+          wx:key="*this"
+        >
+          <radio value="{{item}}" checked="{{gender === item}}" hidden />
+          <text>{{item}}</text>
+        </label>
+      </radio-group>
+    </view>
+    <view class="form-item">
+      <view class="label-row">
+        <text class="label">性取向</text>
+        <text class="required-dot">●</text>
+      </view>
+      <radio-group class="radio-group" bindchange="onOrientationChange">
+        <label
+          class="radio-cell {{orientation === item ? 'active' : ''}}"
+          wx:for="{{orientationRange}}"
+          wx:key="*this"
+        >
+          <radio value="{{item}}" checked="{{orientation === item}}" hidden />
+          <text>{{item}}</text>
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="form-item">
+      <text class="label">居住城市</text>
+      <input
+        class="input"
+        type="text"
+        confirm-type="done"
+        cursor-spacing="20"
+        placeholder-class="placeholder-style"
+        placeholder="例如：长沙"
+        bindinput="onInput"
+        data-field="city"
+        value="{{city}}"
+        maxlength="20"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="label">微信号 <text class="tip-inline">（默认不公开）</text></text>
+      <input
+        class="input"
+        type="text"
+        confirm-type="done"
+        cursor-spacing="20"
+        placeholder-class="placeholder-style"
+        placeholder="WeChat ID"
+        bindinput="onInput"
+        data-field="wechat"
+        value="{{wechat}}"
+        maxlength="30"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="label">关于我</text>
+      <textarea
+        class="textarea"
+        maxlength="200"
+        placeholder-class="placeholder-style"
+        placeholder="例如：慢热、真诚、喜欢咖啡和夜跑，认真寻找稳定关系。"
+        bindinput="onInput"
+        data-field="bio"
+        value="{{bio}}"
+        cursor-spacing="20"
+        show-confirm-bar="false"
+      />
+      <view class="text-count">{{bio.length || 0}} / 200</view>
+    </view>
+
+    <view class="section-title section-gap">匹配偏好</view>
+
+    <view class="form-item">
+      <view class="label-row">
+        <text class="label">婚恋目标</text>
+        <text class="required-dot">●</text>
+      </view>
+      <picker mode="selector" range="{{relationshipGoalRange}}" bindchange="onRelationshipGoalChange">
+        <view class="picker {{relationshipGoal ? 'selected' : ''}}">
+          {{relationshipGoal || '请选择'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-row">
+      <view class="form-item half">
+        <view class="label-row">
+          <text class="label">是否接受异地</text>
+          <text class="required-dot">●</text>
+        </view>
+        <picker mode="selector" range="{{longDistanceRange}}" bindchange="onLongDistanceChange">
+          <view class="picker {{longDistance ? 'selected' : ''}}">
+            {{longDistance || '请选择'}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="form-item half">
+        <view class="label-row">
+          <text class="label">作息类型</text>
+          <text class="required-dot">●</text>
+        </view>
+        <picker mode="selector" range="{{routineRange}}" bindchange="onRoutineChange">
+          <view class="picker {{routine ? 'selected' : ''}}">
+            {{routine || '请选择'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="label-row">
+        <text class="label">工作节奏</text>
+        <text class="required-dot">●</text>
+      </view>
+      <picker mode="selector" range="{{workStyleRange}}" bindchange="onWorkStyleChange">
+        <view class="picker {{workStyle ? 'selected' : ''}}">
+          {{workStyle || '请选择'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-row">
+      <view class="form-item half">
+        <text class="label">理想对象最小年龄</text>
+        <picker mode="selector" range="{{ageRange}}" bindchange="onPreferredAgeMinChange">
+          <view class="picker {{preferredAgeMin ? 'selected' : ''}}">
+            {{preferredAgeMin ? preferredAgeMin + ' 岁' : '不限可空'}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="form-item half">
+        <text class="label">理想对象最大年龄</text>
+        <picker mode="selector" range="{{ageRange}}" bindchange="onPreferredAgeMaxChange">
+          <view class="picker {{preferredAgeMax ? 'selected' : ''}}">
+            {{preferredAgeMax ? preferredAgeMax + ' 岁' : '不限可空'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <button
+    class="submit-btn {{canSubmit ? 'can-submit' : ''}}"
+    bindtap="submitInfo"
+    disabled="{{!canSubmit}}"
+  >
+    保存并开始测试
+  </button>
+
+  <view class="privacy">
+    <text>点击即同意</text>
+    <text class="link" bindtap="showPrivacy">《隐私政策》</text>
+  </view>
+</view>

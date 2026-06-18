@@ -1,0 +1,76 @@
+<view class="container" wx:if="{{user}}">
+  <view class="page-title">推荐详情</view>
+
+  <view class="card profile-card">
+    <image class="avatar" src="{{user.avatar}}" mode="aspectFill" binderror="avatarError"></image>
+
+    <view class="profile-main">
+      <view class="name-row">
+        <text class="nickname">{{user.nickname}}</text>
+        <text class="score">{{user.similarity}}%</text>
+      </view>
+
+      <view class="meta-row">
+        <text class="meta">{{user.age}}岁</text>
+        <text class="meta" wx:if="{{user.gender}}">·</text>
+        <text class="meta" wx:if="{{user.gender}}">{{user.gender}}</text>
+        <text class="meta">·</text>
+        <text class="meta">{{user.city}}</text> 
+        <text class="meta" wx:if="{{user.relationshipGoal}}">· {{user.relationshipGoal}}</text>
+      </view>
+
+      <view class="tag-row">
+        <text class="type-tag">{{user.type}}</text>
+        <text class="type-tag light" wx:if="{{user.routine}}">{{user.routine}}</text>
+        <text class="type-tag light" wx:if="{{user.workStyle}}">{{user.workStyle}}</text>
+      </view>
+    </view>
+
+    <view class="bio">{{user.bio}}</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">为什么推荐 Ta</view>
+    <view class="reason-item" wx:for="{{reasons}}" wx:key="index">{{item}}</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">匹配分析</view>
+
+    <view class="metric-item" wx:for="{{metricList}}" wx:key="label">
+      <view class="metric-head">
+        <text class="metric-name">{{item.label}}</text>
+        <text class="metric-score">{{item.value}}</text>
+      </view>
+      <view class="metric-bar">
+        <view class="metric-fill" style="width: {{item.width}};"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{user.tags && user.tags.length}}">
+    <view class="section-title">关键词</view>
+    <view class="tag-list">
+      <text class="tag" wx:for="{{user.tags}}" wx:key="index"># {{item}}</text>
+    </view>
+  </view>
+  <view class="card">
+  <view class="section-title">破冰开场白</view>
+
+  <view class="opener-card">
+    <view class="opener-text">
+      {{opener}}
+    </view>
+
+    <button class="wechat-btn opener-btn" bindtap="copyOpener">
+      复制开场白
+    </button>
+  </view>
+</view>
+
+<view class="action-bar">
+  <button class="wechat-btn" bindtap="copyWechat">
+    {{user.wechat ? '复制微信号' : '对方暂未公开微信'}}
+  </button>
+</view>
+</view>
